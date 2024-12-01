@@ -1,0 +1,30 @@
+# Use LLVM style as the base
+BasedOnStyle: LLVM
+
+IndentWidth: 2
+TabWidth: 2
+UseTab: Never
+
+# Alignment settings
+AlignAfterOpenBracket: Align
+AlignOperands: Align
+AlignTrailingComments: true
+
+# Formatting options
+BreakBeforeBraces: Allman
+AllowShortFunctionsOnASingleLine: Empty
+ColumnLimit: 120
+
+Cpp11BracedListStyle: false
+AlignArrayOfStructures: Left
+
+
+
+SpaceBeforeCpp11BracedList: true
+BinPackArguments: False
+BinPackParameters: False
+FixNamespaceComments: False
+NamespaceIndentation: All
+
+LambdaBodyIndentation: OuterScope
+
