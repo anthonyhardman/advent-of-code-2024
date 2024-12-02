@@ -66,7 +66,7 @@ fn is_safe_with_dampener(report: &[i64]) -> bool {
         0 => return is_safe(report),
         1 | 2 => bad_windows
             .into_iter()
-            .reduce(|a, b| &a | &b)
+            .reduce(|a, b| &a & &b)
             .unwrap_or_default()
             .iter()
             .any(|&idx| {
