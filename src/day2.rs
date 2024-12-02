@@ -64,18 +64,16 @@ fn is_safe_with_dampener(report: &[i64]) -> bool {
 
     match bad_windows.len() {
         0 => return is_safe(report),
-        1 | 2 => {
-            let problematic_indices: HashSet<usize> = bad_windows
-                .into_iter()
-                .reduce(|a, b| &a | &b)
-                .unwrap_or_default();
-
-            problematic_indices.iter().any(|&idx| {
+        1 | 2 => bad_windows
+            .into_iter()
+            .reduce(|a, b| &a | &b)
+            .unwrap_or_default()
+            .iter()
+            .any(|&idx| {
                 let mut modified_report = report.to_vec();
                 modified_report.remove(idx);
                 is_safe(&modified_report)
-            })
-        }
+            }),
         _ => false,
     }
 }
