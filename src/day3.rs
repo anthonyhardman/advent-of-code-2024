@@ -11,7 +11,7 @@ fn part1(program: &str) -> i64 {
 }
 
 fn part2(program: &str) -> i64 {
-    let dont_block = Regex::new(r"(?s)don't\(\).*?do\(\)").unwrap();
+    let dont_block = Regex::new(r"(?s)don't\(\).*?(do\(\)|$)").unwrap();
     part1(dont_block.replace_all(program, "").as_ref())
 }
 
